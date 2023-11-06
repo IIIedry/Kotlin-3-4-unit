@@ -64,10 +64,8 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
         }
     }
 }
-@Preview(showBackground = true)
+@Preview
 @Composable
-fun GreetingPreview() {
-    AffirmationsTheme {
-        AffirmationsApp()
-    }
+private fun AffirmationCardPreview() {
+    AffirmationCard(Affirmation(R.string.affirmation1, R.drawable.image1))
 }

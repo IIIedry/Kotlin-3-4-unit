@@ -37,12 +37,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Build_a_gridTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TopicGrid()
+                    TopicGrid(
+                        modifier = Modifier.padding(dimensionResource(R.dimen.padding_small))
+                    )
                 }
             }
         }

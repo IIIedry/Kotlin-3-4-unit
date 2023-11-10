@@ -39,6 +39,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.build_superheroes_app.Model.Hero
 import com.example.build_superheroes_app.Model.HeroesRepository
 import com.example.build_superheroes_app.ui.theme.Build_superheroes_appTheme
 
@@ -57,6 +58,7 @@ fun HeroesList(
         }
     }
 
+    // Fade in entry animation for the entire list
     AnimatedVisibility(
         visibleState = visibleState,
         enter = fadeIn(
@@ -139,12 +141,10 @@ fun HeroPreview() {
         R.string.description1,
         R.drawable.android_superhero1
     )
-    Build_superheroes_appTheme{
+    Build_superheroes_appTheme {
         HeroListItem(hero = hero)
     }
 }
-
-
 
 @Preview("Heroes List")
 @Composable
@@ -153,6 +153,10 @@ fun HeroesPreview() {
         Surface (
             color = MaterialTheme.colorScheme.background
         ) {
+            /* Important: It is not a good practice to access data source directly from the UI.
+            In later units you will learn how to use ViewModel in such scenarios that takes the
+            data source as a dependency and exposes heroes.
+            */
             HeroesList(heroes = HeroesRepository.heroes)
         }
     }

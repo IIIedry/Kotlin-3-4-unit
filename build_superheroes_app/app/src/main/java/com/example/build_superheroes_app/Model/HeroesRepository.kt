@@ -1,5 +1,8 @@
 package com.example.build_superheroes_app.Model
 
+import com.example.build_superheroes_app.Hero
+import com.example.build_superheroes_app.R
+
 object HeroesRepository {
     val heroes = listOf(
         Hero(

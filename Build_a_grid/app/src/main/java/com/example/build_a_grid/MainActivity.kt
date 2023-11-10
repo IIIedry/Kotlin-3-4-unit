@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    TopicGrid()
                 }
             }
         }
@@ -30,17 +30,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun TopicGrid() {
+}
+
+@Composable
+fun TopicCard() {
+
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    Build_a_gridTheme {
-        Greeting("Android")
-    }
+fun TopicPreview() {
+    TopicGrid()
 }

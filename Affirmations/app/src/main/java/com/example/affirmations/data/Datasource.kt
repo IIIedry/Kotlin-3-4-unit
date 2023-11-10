@@ -1,5 +1,7 @@
 package com.example.affirmations.data
 
+import androidx.compose.runtime.Composable
+import com.example.affirmations.AffirmationList
 import com.example.affirmations.R
 import com.example.affirmations.model.Affirmation
 
@@ -16,5 +18,12 @@ class Datasource() {
             Affirmation(R.string.affirmation8, R.drawable.image8),
             Affirmation(R.string.affirmation9, R.drawable.image9),
             Affirmation(R.string.affirmation10, R.drawable.image10))
+    }
+
+    @Composable
+    fun AffirmationsApp() {
+        AffirmationList(
+            affirmationList = Datasource().loadAffirmations(),
+        )
     }
 }

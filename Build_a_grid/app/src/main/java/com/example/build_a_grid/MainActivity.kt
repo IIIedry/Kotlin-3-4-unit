@@ -15,10 +15,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
@@ -87,7 +89,19 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
                     bottom = dimensionResource(R.dimen.padding_small)
                 )
             )
-            Row()
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    painter = painterResource(R.drawable.ic_grain),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(start = dimensionResource(R.dimen.padding_medium))
+                )
+                Text(
+                    text = topic.availableCourses.toString(),
+                    style = MaterialTheme.typography.labelMedium,
+                    modifier = Modifier.padding(start = dimensionResource(R.dimen.padding_small))
+                )
+            }
         }
     }
 }

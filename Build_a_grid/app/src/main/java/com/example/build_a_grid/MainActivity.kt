@@ -3,10 +3,15 @@ package com.example.build_a_grid
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -15,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.build_a_grid.data.DataSource
+import com.example.build_a_grid.model.Topic
 import com.example.build_a_grid.ui.theme.Build_a_gridTheme
 
 class MainActivity : ComponentActivity() {
@@ -49,8 +55,18 @@ fun TopicGrid(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TopicCard() {
-
+fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
+    Card{
+        Row{
+            Box{
+            Image()
+            }
+        }
+        Column{
+            Text()
+            Row()
+        }
+    }
 }
 
 @Preview(showBackground = true)

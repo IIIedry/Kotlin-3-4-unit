@@ -124,10 +124,23 @@ fun DogItem(
 }
 
 @Composable
-fun DogHobby(hobbies: Any, modifier: Modifier) {
-
+fun DogHobby(
+    @StringRes dogHobby: Int,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+    ) {
+        Text(
+            text = stringResource(R.string.about),
+            style = MaterialTheme.typography.labelSmall
+        )
+        Text(
+            text = stringResource(dogHobby),
+            style = MaterialTheme.typography.bodyLarge
+        )
+    }
 }
-
 @Composable
 private fun DogItemButton(
     expanded: Boolean,

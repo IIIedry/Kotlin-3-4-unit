@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.simple_animation"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.simple_animation"

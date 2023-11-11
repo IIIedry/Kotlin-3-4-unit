@@ -17,7 +17,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -35,6 +37,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -43,6 +46,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.simple_animation.data.Dog
 import com.example.simple_animation.data.dogs
 import com.example.simple_animation.ui.theme.Simple_AnimationTheme
+
+private val Icons.Filled.ExpandMore: ImageVector
+    get() {
+        TODO()
+    }
+private val Icons.Filled.ExpandLess: ImageVector
+    get() = TODO()
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -161,6 +171,7 @@ private fun DogItemButton(
     }
 }
 
+
 @Composable
 fun DogIcon(
     @DrawableRes dogIcon: Int,
@@ -173,10 +184,6 @@ fun DogIcon(
             .clip(MaterialTheme.shapes.small),
         contentScale = ContentScale.Crop,
         painter = painterResource(dogIcon),
-
-        // Content Description is not needed here - image is decorative, and setting a null content
-        // description allows accessibility services to skip this element during navigation.
-
         contentDescription = null
     )
 }
@@ -230,6 +237,14 @@ fun WoofTopAppBar(modifier: Modifier = Modifier) {
 @Composable
 fun WoofPreview() {
     Simple_AnimationTheme(darkTheme = false) {
+        WoofApp()
+    }
+}
+
+@Preview
+@Composable
+fun WoofDarkThemePreview() {
+    Simple_AnimationTheme(darkTheme = true) {
         WoofApp()
     }
 }

@@ -253,6 +253,25 @@ private fun RevenueInfo(revenue: Int, modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+private fun DessertsSoldInfo(dessertsSold: Int, modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+    ) {
+        Text(
+            text = stringResource(R.string.dessert_sold),
+            style = MaterialTheme.typography.h6
+        )
+        Text(
+            text = dessertsSold.toString(),
+            style = MaterialTheme.typography.h6
+        )
+    }
+}
+
 
 @Preview
 @Composable

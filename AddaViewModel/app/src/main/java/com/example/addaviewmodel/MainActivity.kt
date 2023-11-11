@@ -87,7 +87,15 @@ private fun shareSoldDessertsInformation(intentContext: Context, dessertsSold: I
 }
 
 @Composable
-fun DessertClickerApp(){}
+private fun DessertClickerApp(
+    viewModel: DessertViewModel = viewModel()
+) {
+    val uiState by viewModel.dessertUiState.collectAsState()
+    DessertClickerApp(
+        uiState = uiState,
+        onDessertClicked = viewModel::onDessertClicked
+    )
+}
 
 
 @Preview

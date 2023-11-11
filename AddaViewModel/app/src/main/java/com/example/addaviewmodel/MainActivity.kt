@@ -37,6 +37,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
@@ -229,6 +230,26 @@ private fun TransactionInfo(
     ) {
         DessertsSoldInfo(dessertsSold)
         RevenueInfo(revenue)
+    }
+}
+
+@Composable
+private fun RevenueInfo(revenue: Int, modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+    ) {
+        Text(
+            text = stringResource(R.string.total_revenue),
+            style = MaterialTheme.typography.h4
+        )
+        Text(
+            text = "$${revenue}",
+            textAlign = TextAlign.Right,
+            style = MaterialTheme.typography.h4
+        )
     }
 }
 

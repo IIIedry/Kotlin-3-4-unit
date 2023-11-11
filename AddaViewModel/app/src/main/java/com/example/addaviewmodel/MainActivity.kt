@@ -9,8 +9,12 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -18,7 +22,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
 import com.example.addaviewmodel.ui.theme.AddAViewModelTheme
 
@@ -127,6 +133,37 @@ private fun DessertClickerApp(
             onDessertClicked = onDessertClicked,
             modifier = Modifier.padding(contentPadding)
         )
+    }
+}
+
+@Composable
+private fun AppBar(
+    onShareButtonClicked: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colors.primary),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(
+            text = stringResource(R.string.app_name),
+            modifier = Modifier.padding(start = 16.dp),
+            color = MaterialTheme.colors.onPrimary,
+            style = MaterialTheme.typography.h6,
+        )
+        IconButton(
+            onClick = onShareButtonClicked,
+            modifier = Modifier.padding(end = 16.dp),
+        ) {
+            Icon(
+                imageVector = Icons.Filled.Share,
+                contentDescription = stringResource(R.string.share),
+                tint = MaterialTheme.colors.onPrimary
+            )
+        }
     }
 }
 

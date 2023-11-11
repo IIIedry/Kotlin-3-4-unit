@@ -2,7 +2,6 @@ package com.example.addaviewmodel.Data
 
 import androidx.annotation.DrawableRes
 import com.example.addaviewmodel.Data.Datasource.dessertList
-import com.example.dessertclicker.data.Datasource.dessertList
 
 data class DessertUiState(
     val currentDessertIndex: Int = 0,

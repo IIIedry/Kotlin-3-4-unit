@@ -1,12 +1,8 @@
 package com.example.addaviewmodel.Data
 
 import com.example.addaviewmodel.R
-import com.example.dessertclicker.R
-import com.example.dessertclicker.model.Dessert
+import com.example.addaviewmodel.model.Dessert
 
-/**
- * [Datasource] generates a list of [Dessert]
- */
 object Datasource {
     val dessertList = listOf(
         Dessert(R.drawable.cupcake, 5, 0),

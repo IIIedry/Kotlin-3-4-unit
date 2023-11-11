@@ -42,10 +42,6 @@ class MainActivity : ComponentActivity() {
                 TopAppBar()
             }
         ) {
-            /* Important: It is not a good practice to access data source directly from the UI.
-            In later units you will learn how to use ViewModel in such scenarios that takes the
-            data source as a dependency and exposes heroes.
-             */
             val heroes = HeroesRepository.heroes
             HeroesList(heroes = heroes, contentPadding = it)
         }

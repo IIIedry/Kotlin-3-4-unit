@@ -1,6 +1,8 @@
 package com.example.addaviewmodel
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,32 +17,27 @@ import com.example.addaviewmodel.ui.theme.AddAViewModelTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate Called")
+
         setContent {
             AddAViewModelTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+                DessertClickerApp()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun DessertClickerApp(){}
 
-@Preview(showBackground = true)
+
+@Preview
 @Composable
-fun GreetingPreview() {
+fun MyDessertClickerAppPreview() {
     AddAViewModelTheme {
-        Greeting("Android")
+        DessertClickerApp(
+            uiState = DessertUiState(),
+            onDessertClicked = {}
+        )
     }
 }

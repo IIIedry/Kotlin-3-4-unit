@@ -19,7 +19,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -46,13 +47,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.simple_animation.data.Dog
 import com.example.simple_animation.data.dogs
 import com.example.simple_animation.ui.theme.Simple_AnimationTheme
-
-private val Icons.Filled.ExpandMore: ImageVector
-    get() {
-        TODO()
-    }
-private val Icons.Filled.ExpandLess: ImageVector
-    get() = TODO()
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

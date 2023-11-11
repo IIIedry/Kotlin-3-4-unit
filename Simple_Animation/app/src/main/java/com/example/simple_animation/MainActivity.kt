@@ -44,6 +44,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.simple_animation.data.Dog
 import com.example.simple_animation.data.dogs
 import com.example.simple_animation.ui.theme.Simple_AnimationTheme
@@ -65,7 +66,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WoofApp() {
     Scaffold(
@@ -219,6 +219,7 @@ fun WoofTopAppBar(modifier: Modifier = Modifier) {
                 )
                 Text(
                     text = stringResource(R.string.app_name),
+                    fontSize = 16.sp,
                     style = MaterialTheme.typography.displayLarge
                 )
             }

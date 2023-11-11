@@ -23,15 +23,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.affirmations.data.Datasource
 import com.example.affirmations.model.Affirmation
 import com.example.affirmations.ui.theme.AffirmationsTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             AffirmationsTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -41,6 +42,18 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+
+@Composable
+fun AffirmationsApp() {
+    AffirmationList(
+        affirmationList = Datasource().loadAffirmations(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+            .fillMaxWidth()
+
+    )
 }
 
 @Composable
@@ -56,18 +69,15 @@ fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Mod
 }
 
 @Composable
-fun AffirmationsApp() {
-}
-@Composable
 fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
     Card(modifier = modifier) {
         Column {
             Image(
-                painter = painterResource(affirmation.imageResourceId),
-                contentDescription = stringResource(affirmation.stringResourceId),
+                painter = painterResource(id = affirmation.imageResourceId),
+                contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(194.dp),
+                    .height(180.dp),
                 contentScale = ContentScale.Crop
             )
             Text(
@@ -78,8 +88,9 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
         }
     }
 }
+
 @Preview
 @Composable
 private fun AffirmationCardPreview() {
-    AffirmationCard(Affirmation(R.string.affirmation1, R.drawable.image1))
+    AffirmationsApp()
 }

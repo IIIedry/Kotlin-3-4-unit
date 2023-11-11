@@ -45,6 +45,17 @@ class MainActivity : ComponentActivity() {
         super.onPause()
         Log.d(TAG, "onPause Called")
     }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop Called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy Called")
+    }
+
 }
 
 @Composable

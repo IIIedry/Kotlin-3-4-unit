@@ -85,6 +85,11 @@ class MainActivity : ComponentActivity() {
         Log.d(TAG, "onDestroy Called")
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy Called")
+    }
+
 }
 
 private fun shareSoldDessertsInformation(intentContext: Context, dessertsSold: Int, revenue: Int) {
